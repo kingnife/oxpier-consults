@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 11% 7%;
+    --foreground: 220 7% 93%;
+    --card: 210 12% 10%;
+    --card-foreground: 220 7% 93%;
+    --popover: 210 12% 10%;
+    --popover-foreground: 220 7% 93%;
+    --primary: 209 29% 34%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214 8% 18%;
+    --secondary-foreground: 220 7% 93%;
+    --muted: 216 8% 25%;
+    --muted-foreground: 210 4% 67%;
+    --accent: 209 26% 49%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 220 7% 93%;
+    --border: 214 8% 18%;
+    --input: 214 8% 18%;
+    --ring: 209 29% 34%;
+    --radius: 0.25rem;
+
+    /* Oxpier Brand Tokens */
+    --oxpier-deep-charcoal:   #0F1113;
+    --oxpier-charcoal-raise:  #16191C;
+    --oxpier-graphite:        #2A2D31;
+    --oxpier-slate:           #3A3E44;
+    --oxpier-steel-blue:      #3E5871;
+    --oxpier-steel-blue-hi:   #5B7C9C;
+    --oxpier-polished-silver: #E5E5E5;
+    --oxpier-brushed-silver:  #C6C9CC;
+    --oxpier-matte-silver:    #A7AAAD;
+    --oxpier-primary-text:    #ECEDEF;
+    --oxpier-white:           #FFFFFF;
+  }
+
+  * { @apply border-border; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #0F1113;
+    color: #ECEDEF;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+@layer components {
+
+  /* ─── WHITE SECTION UTILITY ──────────────────────────────────────────────── */
+  /* Use .section-light on any <section> to flip it to a white/off-white surface */
+  .section-light {
+    background-color: #FFFFFF;
+    color: #0F1113;
+  }
+  .section-light h1,
+  .section-light h2,
+  .section-light h3,
+  .section-light h4 {
+    color: #0F1113;
+  }
+  .section-light p {
+    color: #3A3E44;
+  }
+
+  /* White card — used inside dark sections for contrast */
+  .card-white {
+    background-color: #FFFFFF;
+    color: #0F1113;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .card-white:hover {
+    box-shadow: 0 8px 32px rgba(62,88,113,0.14);
+    border-color: #C6C9CC;
+    transform: translateY(-2px);
+  }
+
+  /* Off-white panel — alternating section tint */
+  .section-cream {
+    background-color: #F7F7F7;
+    color: #0F1113;
+  }
+  .section-cream h1,
+  .section-cream h2,
+  .section-cream h3 { color: #0F1113; }
+  .section-cream p   { color: #3A3E44; }
+
+  /* ─── BUTTON VARIANTS ────────────────────────────────────────────────────── */
+  .btn-solid-steel {
+    background-color: #3E5871;
+    color: #FFFFFF;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.12);
+  }
+  .btn-solid-steel:hover {
+    background-color: #5B7C9C;
+    box-shadow: 0 4px 16px rgba(62,88,113,0.35);
+    transform: translateY(-1px);
+  }
+  .btn-solid-steel:active { transform: translateY(0); }
+
+  /* Dark button — for use on white/light sections */
+  .btn-dark {
+    background-color: #0F1113;
+    color: #FFFFFF;
+    border: 1px solid #0F1113;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .btn-dark:hover {
+    background-color: #16191C;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    transform: translateY(-1px);
+  }
+  .btn-dark:active { transform: translateY(0); }
+
+  .btn-metal {
+    background: linear-gradient(180deg, #FFFFFF 0%, #E5E5E5 50%, #C6C9CC 100%);
+    color: #0F1113;
+    border: 1px solid #E5E5E5;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.8);
+  }
+  .btn-metal:hover {
+    box-shadow: 0 4px 16px rgba(229,229,229,0.2);
+    transform: translateY(-1px);
+  }
+  .btn-metal:active { transform: translateY(0); }
+
+  .btn-outline {
+    background-color: transparent;
+    color: #ECEDEF;
+    border: 1px solid #3A3E44;
+    font-weight: 500;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-outline:hover {
+    border-color: #C6C9CC;
+    background-color: #16191C;
+    color: #FFFFFF;
+  }
+
+  /* Outline variant for light sections */
+  .btn-outline-dark {
+    background-color: transparent;
+    color: #0F1113;
+    border: 1px solid #3A3E44;
+    font-weight: 500;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-outline-dark:hover {
+    border-color: #0F1113;
+    background-color: #0F1113;
+    color: #FFFFFF;
+  }
+
+  .btn-ghost {
+    background-color: transparent;
+    color: #A7AAAD;
+    border: 1px solid transparent;
+    font-weight: 400;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-ghost:hover {
+    color: #ECEDEF;
+    background-color: #16191C;
+  }
+
+  /* ─── TAGS ───────────────────────────────────────────────────────────────── */
+  .tag-steel {
+    background-color: rgba(62,88,113,0.12);
+    border: 1px solid #3E5871;
+    color: #5B7C9C;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .tag-steel-dark {
+    background-color: rgba(62,88,113,0.1);
+    border: 1px solid rgba(62,88,113,0.4);
+    color: #3E5871;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .tag-metal-outline {
+    background-color: transparent;
+    border: 1px solid #3A3E44;
+    color: #C6C9CC;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .tag-muted {
+    background-color: #2A2D31;
+    border: 1px solid #2A2D31;
+    color: #A7AAAD;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ─── DIVIDERS ───────────────────────────────────────────────────────────── */
+  .metal-border-t {
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(90deg, transparent, #3A3E44 20%, #C6C9CC 50%, #3A3E44 80%, transparent) 1;
+  }
+  .white-border-t {
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(90deg, transparent, #C6C9CC 20%, #0F1113 50%, #C6C9CC 80%, transparent) 1;
+  }
+
+  /* ─── TEXTURES ───────────────────────────────────────────────────────────── */
+  .ground-grid {
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, rgba(42,45,49,0.25) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(42,45,49,0.25) 1px, transparent 1px);
+  }
+  .light-grid {
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+  }
+}
