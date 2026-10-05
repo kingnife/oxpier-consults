@@ -1,16 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { OxpierLogo } from "@/components/ui/logo";
 import { ButtonLink } from "@/components/ui/button";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const NAV_LINKS = [
-  { href: "/services", label: "Services" },
+  { href: "/careers", label: "Careers" },
   { href: "/case-studies", label: "Results" },
   { href: "/operators", label: "Operators" },
   { href: "/journal", label: "Journal" },
-  { href: "/careers", label: "Careers" },
+  { href: "/services", label: "Services" },
 ];
 
 export function Header() {
@@ -27,14 +26,18 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0F1113]/92 backdrop-blur-md border-b border-[#2A2D31] py-3"
-          : "bg-transparent py-5"
+          ? "bg-[#0F1113]/95 backdrop-blur-md border-b border-[#2A2D31] py-2.5"
+          : "bg-transparent py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Logo */}
-        <a href="/" aria-label="Oxpier Consults — home">
-          <OxpierLogo size="md" />
+        {/* Brand Logo */}
+        <a href="/" aria-label="Oxpier Consults Home" className="flex items-center gap-2 group">
+          <img
+            src="/assets/oxpier-logo-transparent.png"
+            alt="Oxpier Consults Logo"
+            className="h-11 sm:h-12 w-auto object-contain mix-blend-screen transition-opacity hover:opacity-90"
+          />
         </a>
 
         {/* Desktop nav */}
@@ -43,7 +46,7 @@ export function Header() {
             <a
               key={href}
               href={href}
-              className="text-xs font-sans uppercase tracking-[0.12em] text-[#A7AAAD] hover:text-white transition-colors"
+              className="text-xs font-sans uppercase tracking-[0.14em] text-[#A7AAAD] hover:text-white transition-colors"
             >
               {label}
             </a>

@@ -20,31 +20,32 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Oxpier Consults | Operational Precision for Scaling Firms",
+  title: "Oxpier Academy | Remote Operator Training & Talent Pipeline",
   description:
-    "B2B growth agency embedding operators, outbound pipeline, and execution systems into founder-led teams. Execution without drift.",
+    "Rigorous training, live performance benchmarks, and direct remote placement for elite virtual assistants and operators.",
   keywords: [
-    "B2B Growth Agency",
-    "Executive Operators",
-    "Outbound Pipeline",
-    "Executive Assistants",
-    "B2B Lead Generation",
-    "Operational Execution",
-    "Oxpier Consults",
-    "Marketing Agency",
+    "Oxpier Academy",
+    "Remote Operator Training",
+    "Executive Virtual Assistant",
+    "Talent Leaderboard",
+    "Remote Jobs",
+    "Executive Assistant Training",
+    "Virtual Assistant Placement",
+    "Operator Pipeline",
   ],
-  authors: [{ name: "Oxpier Consults" }],
+  authors: [{ name: "Oxpier Academy" }],
   openGraph: {
-    title: "Oxpier Consults | Operational Precision for Scaling Firms",
+    title: "Oxpier Academy | Remote Operator Training & Talent Pipeline",
     description:
-      "We embed operators, outbound pipelines, and execution systems into founder-led teams—so your operation runs without drift.",
+      "Rigorous training, live performance benchmarks, and direct remote placement for elite virtual assistants and operators.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oxpier Consults | Operational Precision for Scaling Firms",
-    description: "B2B growth agency. Execution without drift.",
+    title: "Oxpier Academy | Remote Operator Training & Talent Pipeline",
+    description:
+      "Rigorous training, live performance benchmarks, and direct remote placement for elite virtual assistants and operators.",
   },
   robots: {
     index: true,

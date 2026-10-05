@@ -17,6 +17,26 @@ const config: Config = {
     },
     extend: {
       colors: {
+        // Oxpier Dark-Mode Brand Palette
+        "deep-charcoal": "#0F1113",
+        "charcoal-raise": "#16191C",
+        "steel-blue": "#3E5871",
+        "steel-blue-hi": "#5B7C9C",
+        "steel-blue-subtle": "rgba(62, 88, 113, 0.15)",
+        "steel-blue-glow": "rgba(62, 88, 113, 0.35)",
+
+        // Typography Colors
+        "primary-text": "#ECEDEF",
+        "pure-white": "#FFFFFF",
+        "high-contrast": "#FFFFFF",
+
+        // Secondary / Structural Tokens
+        graphite: "#2A2D31",
+        "brand-slate": "#3A3E44",
+        "polished-silver": "#E5E5E5",
+        "brushed-silver": "#C6C9CC",
+        "matte-silver": "#A7AAAD",
+
         // Shadcn UI Semantic Tokens
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -51,26 +71,6 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-
-        // Oxpier Consults Exact Brand Tokens
-        // Neutrals (The Ground)
-        "deep-charcoal": "#0F1113",
-        "charcoal-raise": "#16191C",
-        graphite: "#2A2D31",
-        "brand-slate": "#3A3E44",
-
-        // Metals
-        "polished-silver": "#E5E5E5",
-        "brushed-silver": "#C6C9CC",
-        "matte-silver": "#A7AAAD",
-
-        // Accents (Rule: Never more than one steel-blue accent per surface)
-        "steel-blue": "#3E5871",
-        "steel-blue-hi": "#5B7C9C",
-
-        // Text
-        "primary-text": "#ECEDEF",
-        "pure-white": "#FFFFFF",
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "Playfair Display", "Georgia", "serif"],

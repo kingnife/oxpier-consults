@@ -1,29 +1,29 @@
 "use client";
 
 import React, { useState } from "react";
-import { OxpierLogo } from "@/components/ui/logo";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
 const FOOTER_LINKS = {
-  "Client Systems": [
-    { label: "People — EA Placements", href: "/services" },
-    { label: "Pipeline — Outbound", href: "/services" },
-    { label: "Systems — Automation", href: "/services" },
-    { label: "Book Discovery Call", href: "/contact" },
+  "Academy Tracks": [
+    { label: "Executive Virtual Assistant", href: "#training" },
+    { label: "Pipeline and CRM Operations", href: "#training" },
+    { label: "Systems and SOP Architecture", href: "#training" },
+    { label: "Cohort 08 Application", href: "#apply" },
   ],
-  "Join the Pipeline": [
-    { label: "Track 01 — Talent Pool", href: "/careers" },
-    { label: "Track 02 — Agency Roles", href: "/careers" },
-    { label: "Track 03 — Internships", href: "/careers" },
+  "Talent Resources": [
+    { label: "Talent Leaderboard", href: "#leaderboard" },
+    { label: "Vetting Standards", href: "#standards" },
+    { label: "Graduation Benchmarks", href: "#training" },
+    { label: "Placement Model", href: "#standards" },
   ],
-  Company: [
-    { label: "About Oxpier", href: "/" },
-    { label: "The Journal", href: "/journal" },
-    { label: "The Podcast", href: "/journal" },
-    { label: "Client Results", href: "/case-studies" },
+  Admissions: [
+    { label: "Selection Process", href: "#standards" },
+    { label: "Candidate FAQ", href: "#apply" },
+    { label: "Compensation Floor", href: "#standards" },
+    { label: "Active Cohort Schedule", href: "#apply" },
   ],
 };
 
@@ -38,16 +38,16 @@ function NewsletterSignup() {
       return;
     }
     setStatus("loading");
-    // Simulate API call
-    setTimeout(() => setStatus("success"), 1200);
+    // Simulated instant state
+    setTimeout(() => setStatus("success"), 600);
   };
 
   if (status === "success") {
     return (
       <div className="flex items-center gap-3 p-4 rounded-lg bg-[#16191C] border border-[#3E5871]/50 text-[#ECEDEF]">
-        <CheckCircle2 className="w-5 h-5 text-[#3E5871] shrink-0" />
+        <CheckCircle2 className="w-5 h-5 text-[#5B7C9C] shrink-0" />
         <span className="text-sm font-medium">
-          You&apos;re on the list. Expect exact insights, no filler.
+          You are on the dispatch list. Exact operator drills and placement updates arrive weekly.
         </span>
       </div>
     );
@@ -64,10 +64,10 @@ function NewsletterSignup() {
               setEmail(e.target.value);
               if (status === "error") setStatus("idle");
             }}
-            placeholder="you@company.com"
+            placeholder="operator@domain.com"
             disabled={status === "loading"}
             error={status === "error"}
-            aria-label="Your work email"
+            aria-label="Your email address"
             aria-invalid={status === "error"}
             aria-describedby={status === "error" ? "newsletter-error" : undefined}
           />
@@ -75,22 +75,22 @@ function NewsletterSignup() {
             <span
               id="newsletter-error"
               role="alert"
-              className="absolute -bottom-5 left-0 text-xs text-red-400"
+              className="absolute -bottom-5 left-0 text-xs text-rose-400"
             >
-              Please enter a valid work email.
+              Please enter a valid email address.
             </span>
           )}
         </div>
         <button
           type="submit"
           disabled={status === "loading"}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#3E5871] text-white text-xs font-sans font-semibold uppercase tracking-widest rounded hover:bg-[#5B7C9C] transition-colors disabled:opacity-70 whitespace-nowrap"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#3E5871] text-white text-xs font-sans font-semibold uppercase tracking-widest rounded hover:bg-[#5B7C9C] transition-colors disabled:opacity-70 whitespace-nowrap cursor-pointer"
         >
           {status === "loading" ? (
             <Loader2 className="w-4 h-4 animate-spin" />
           ) : (
             <>
-              Subscribe <ArrowRight className="w-4 h-4" />
+              Join Dispatch <ArrowRight className="w-4 h-4" />
             </>
           )}
         </button>
@@ -107,13 +107,13 @@ export function Footer() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
           <div className="md:w-2/5 shrink-0">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#3E5871] mb-2 font-sans">
-              The Oxpier Brief
+              The Operator Dispatch
             </p>
             <h3 className="font-serif font-semibold text-white text-2xl mb-1">
-              Exact insights. No filler.
+              Exact techniques. No fluff.
             </h3>
-            <p className="text-sm text-[#ECEDEF]/55">
-              Weekly on operational execution, outbound, and B2B growth. Unsubscribe any time.
+            <p className="text-sm text-[#ECEDEF]/60">
+              Weekly simulations, calendar audit frameworks, and direct placement alerts for elite remote talent.
             </p>
           </div>
           <div className="flex-1 pb-4">
@@ -127,9 +127,15 @@ export function Footer() {
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
-            <OxpierLogo size="sm" showTagline={false} />
-            <p className="mt-4 text-xs text-[#A7AAAD] leading-relaxed max-w-[200px]">
-              Operational precision for scaling firms. We fix execution gaps that stall growth.
+            <a href="/" aria-label="Oxpier Home" className="flex items-center mb-4">
+              <img
+                src="/assets/oxpier-logo-transparent.png"
+                alt="Oxpier Logo"
+                className="h-9 w-auto object-contain mix-blend-screen"
+              />
+            </a>
+            <p className="text-xs text-[#A7AAAD] leading-relaxed max-w-[240px]">
+              The training ground and placement pipeline for high-performing virtual assistants, interns, and remote operators.
             </p>
           </div>
 
@@ -158,18 +164,18 @@ export function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-[#2A2D31] py-6 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-[#6B6B6B]">
-          <p>© {new Date().getFullYear()} Oxpier Consults. All rights reserved.</p>
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-[#A7AAAD]/60">
+          <p>© {new Date().getFullYear()} Oxpier Academy. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-[#A7AAAD] transition-colors">
-              Privacy Policy
+            <a href="#apply" className="hover:text-white transition-colors">
+              Admissions Policy
             </a>
-            <span>·</span>
-            <a href="#" className="hover:text-[#A7AAAD] transition-colors">
-              Terms of Service
+            <span>•</span>
+            <a href="#standards" className="hover:text-white transition-colors">
+              Code of Conduct
             </a>
-            <span>·</span>
-            <span>Anchored in Excellence</span>
+            <span>•</span>
+            <span>Zero Tuition Guarantee</span>
           </div>
         </div>
       </div>
