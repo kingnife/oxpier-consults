@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { OxpierLogo } from "@/components/ui/logo";
+import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
 
@@ -130,7 +130,13 @@ export function Footer() {
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" aria-label="Oxpier Home" className="inline-flex items-center mb-4 transition-opacity hover:opacity-90">
-              <OxpierLogo size="sm" showTagline={true} />
+              <Image
+                src="/assets/oxpier-logo-transparent.png"
+                alt="Oxpier Logo"
+                width={44}
+                height={44}
+                className="h-10 w-10 object-contain mix-blend-screen"
+              />
             </Link>
             <p className="text-xs text-[#A7AAAD] leading-relaxed max-w-[240px]">
               The training ground and placement pipeline for high-performing virtual assistants, interns, and remote operators.
