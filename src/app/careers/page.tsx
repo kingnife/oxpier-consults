@@ -3,7 +3,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { ArrowRight, Briefcase, Zap, GraduationCap } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Careers | Oxpier Consults",
+  title: "Career Tracks & Placements | Oxpier Consults",
   description:
     "Join the Oxpier talent pool as an EA, apply for internal agency roles, or enrol in a 6-month operational internship. No vanity titles. Just work that matters.",
 };
@@ -54,16 +54,16 @@ export default function CareersPage() {
   return (
     <main className="pt-20">
       {/* Page header */}
-      <div className="section-light border-b border-[#E5E5E5] px-4 py-20 md:py-28 text-center relative">
-        <div className="pointer-events-none absolute inset-0 light-grid" />
-        <div className="relative">
-          <p className="text-xs font-sans font-bold uppercase tracking-[0.22em] text-[#3E5871] mb-4">
+      <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 border-b border-[#2A2D31] overflow-hidden text-center bg-[#0F1113]">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#3E5871]/12 blur-[120px] pointer-events-none rounded-full" />
+        <div className="relative z-10 max-w-4xl mx-auto space-y-4">
+          <p className="text-xs font-sans font-bold uppercase tracking-[0.22em] text-[#5B7C9C]">
             Open Tracks
           </p>
-          <h1 className="text-4xl md:text-6xl font-serif font-semibold text-[#0F1113] mb-4">
-            Join the Pipeline
+          <h1 className="text-4xl sm:text-6xl font-serif font-bold text-white tracking-tight">
+            Operational Career Tracks
           </h1>
-          <p className="text-[#3A3E44] max-w-xl mx-auto text-lg">
+          <p className="text-[#ECEDEF]/75 max-w-xl mx-auto text-lg leading-relaxed font-sans">
             No office politics. No vanity titles. Just work that matters.
           </p>
         </div>
@@ -118,16 +118,16 @@ export default function CareersPage() {
       </section>
 
       {/* Culture strip */}
-      <div className="section-cream border-t border-[#E5E5E5] py-20 px-4">
+      <div className="bg-[#16191C] border-t border-[#2A2D31] py-20 px-4">
         <div className="max-w-5xl mx-auto grid sm:grid-cols-3 gap-10 text-center">
           {[
-            { stat: "100%", label: "Remote" },
-            { stat: "< 2 wks", label: "Onboarding time" },
-            { stat: "4 continents", label: "Where our operators work from" },
+            { stat: "100%", label: "Remote Placements" },
+            { stat: "< 2 wks", label: "Onboarding Time" },
+            { stat: "4 Continents", label: "Where our operators work from" },
           ].map(({ stat, label }) => (
             <div key={label}>
-              <p className="text-4xl font-serif font-semibold text-[#0F1113] mb-2">{stat}</p>
-              <p className="text-sm text-[#6B6B6B] font-sans uppercase tracking-wider">{label}</p>
+              <p className="text-4xl font-serif font-semibold text-white mb-2">{stat}</p>
+              <p className="text-xs font-mono uppercase tracking-widest text-[#A7AAAD]">{label}</p>
             </div>
           ))}
         </div>

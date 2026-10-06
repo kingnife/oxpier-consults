@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { OxpierLogo } from "@/components/ui/logo";
 import { ButtonLink } from "@/components/ui/button";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
@@ -44,15 +44,9 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" aria-label="Oxpier Consults Home" className="flex items-center gap-2 group">
-          <Image
-            src="/assets/oxpier-logo-transparent.png"
-            alt="Oxpier Consults Logo"
-            width={160}
-            height={48}
-            priority
-            className="h-11 sm:h-12 w-auto object-contain mix-blend-screen transition-opacity hover:opacity-90"
-          />
+        <Link href="/" aria-label="Oxpier Consults Home" className="flex items-center group transition-opacity hover:opacity-90">
+          <OxpierLogo size="sm" className="sm:hidden" showTagline={false} />
+          <OxpierLogo size="md" className="hidden sm:inline-flex" showTagline={true} />
         </Link>
 
         {/* Desktop nav */}

@@ -89,20 +89,18 @@ export function TestimonialsCarousel() {
   return (
     <section
       id="testimonials"
-      className="section-light border-y border-[#E5E5E5] py-24 md:py-32 px-4 relative"
+      className="bg-[#0F1113] border-y border-[#2A2D31] py-24 md:py-32 px-4 relative"
       aria-labelledby="testimonials-heading"
     >
-      {/* light grid texture */}
-      <div className="pointer-events-none absolute inset-0 light-grid" />
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-xs font-sans font-bold uppercase tracking-[0.22em] text-[#3E5871] mb-3">
+          <p className="text-xs font-sans font-bold uppercase tracking-[0.22em] text-[#5B7C9C] mb-3">
             Client Results
           </p>
           <h2
             id="testimonials-heading"
-            className="text-3xl md:text-4xl font-serif font-semibold text-[#0F1113]"
+            className="text-3xl md:text-4xl font-serif font-semibold text-white"
           >
             From the operators&apos; clients.
           </h2>
@@ -127,34 +125,34 @@ export function TestimonialsCarousel() {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-white border border-[#E5E5E5] rounded-2xl p-10 md:p-14 relative shadow-[0_4px_24px_rgba(0,0,0,0.07)]"
+                className="bg-[#16191C] border border-[#2A2D31] rounded-2xl p-10 md:p-14 relative shadow-[0_8px_32px_rgba(0,0,0,0.3)]"
                 aria-live="polite"
                 aria-atomic="true"
               >
                 {/* Steel blue top accent line */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl bg-gradient-to-r from-transparent via-[#3E5871]/40 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl bg-gradient-to-r from-transparent via-[#5B7C9C]/60 to-transparent" />
 
-                <Quote className="w-8 h-8 text-[#3E5871] mb-6 opacity-80" />
+                <Quote className="w-8 h-8 text-[#5B7C9C] mb-6 opacity-80" />
 
-                <blockquote className="text-xl md:text-2xl font-serif font-medium text-[#0F1113] leading-snug mb-8 italic">
+                <blockquote className="text-xl md:text-2xl font-serif font-medium text-white leading-snug mb-8 italic">
                   &ldquo;{current.quote}&rdquo;
                 </blockquote>
 
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
-                    <p className="font-sans font-semibold text-[#0F1113] text-sm">
+                    <p className="font-sans font-semibold text-white text-sm">
                       {current.author}
                     </p>
-                    <p className="font-sans text-xs text-[#6B6B6B] mt-0.5">
+                    <p className="font-sans text-xs text-[#A7AAAD] mt-0.5">
                       {current.role} · {current.company}
                     </p>
                   </div>
                   {current.metric && (
-                    <div className="shrink-0 px-4 py-2 rounded-lg bg-[#3E5871]/10 border border-[#3E5871]/30 text-center">
-                      <p className="text-xs font-bold uppercase tracking-widest text-[#3E5871]">
+                    <div className="shrink-0 px-4 py-2 rounded-lg bg-[#3E5871]/20 border border-[#3E5871]/40 text-center">
+                      <p className="text-xs font-bold uppercase tracking-widest text-[#5B7C9C]">
                         Result
                       </p>
-                      <p className="text-sm font-semibold text-[#0F1113] mt-0.5">
+                      <p className="text-sm font-semibold text-white mt-0.5">
                         {current.metric}
                       </p>
                     </div>

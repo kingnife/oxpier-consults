@@ -89,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${playfair.variable} ${inter.variable} dark`}
       style={{ colorScheme: "dark" }}
+      data-scroll-behavior="smooth"
     >
       <head>
         <script

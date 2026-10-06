@@ -13,18 +13,18 @@ export default function ServicesPage() {
   return (
     <main className="pt-20">
       {/* Page header */}
-      <div className="section-light border-b border-[#E5E5E5] px-4 py-20 md:py-28 text-center relative">
-        <div className="pointer-events-none absolute inset-0 light-grid" />
-        <div className="relative">
-        <p className="text-xs font-sans font-bold uppercase tracking-[0.22em] text-[#3E5871] mb-4">
-          What We Do
-        </p>
-        <h1 className="text-4xl md:text-6xl font-serif font-semibold text-[#0F1113] mb-4">
-          Our Services
-        </h1>
-        <p className="text-[#3A3E44] max-w-xl mx-auto text-lg">
-          Seven disciplines. Each a standalone engagement or part of a unified embedded programme.
-        </p>
+      <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 border-b border-[#2A2D31] overflow-hidden text-center bg-[#0F1113]">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#3E5871]/12 blur-[120px] pointer-events-none rounded-full" />
+        <div className="relative z-10 max-w-4xl mx-auto space-y-4">
+          <p className="text-xs font-sans font-bold uppercase tracking-[0.22em] text-[#5B7C9C]">
+            What We Do
+          </p>
+          <h1 className="text-4xl sm:text-6xl font-serif font-bold text-white tracking-tight">
+            Our Services &amp; Disciplines
+          </h1>
+          <p className="text-[#ECEDEF]/75 max-w-xl mx-auto text-lg leading-relaxed font-sans">
+            Seven disciplines. Each a standalone engagement or part of a unified embedded programme.
+          </p>
         </div>
       </div>
 
@@ -32,11 +32,11 @@ export default function ServicesPage() {
       <ServicesGrid />
 
       {/* CTA */}
-      <div className="section-cream border-t border-[#E5E5E5] py-20 px-4 text-center">
-        <h2 className="text-2xl md:text-3xl font-serif font-semibold text-[#0F1113] mb-4">
+      <div className="bg-[#16191C] border-t border-[#2A2D31] py-20 px-4 text-center">
+        <h2 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-4">
           Not sure which fits your operation?
         </h2>
-        <p className="text-[#6B6B6B] mb-8 max-w-md mx-auto">
+        <p className="text-[#A7AAAD] mb-8 max-w-md mx-auto text-sm leading-relaxed">
           Book a 30-minute discovery call. We&apos;ll map the right engagement to your situation.
         </p>
         <ButtonLink href="/contact" variant="solid-steel" size="lg" className="gap-2">

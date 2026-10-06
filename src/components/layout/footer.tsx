@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { OxpierLogo } from "@/components/ui/logo";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
 
@@ -129,14 +129,8 @@ export function Footer() {
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" aria-label="Oxpier Home" className="flex items-center mb-4">
-              <Image
-                src="/assets/oxpier-logo-transparent.png"
-                alt="Oxpier Logo"
-                width={120}
-                height={36}
-                className="h-9 w-auto object-contain mix-blend-screen"
-              />
+            <Link href="/" aria-label="Oxpier Home" className="inline-flex items-center mb-4 transition-opacity hover:opacity-90">
+              <OxpierLogo size="sm" showTagline={true} />
             </Link>
             <p className="text-xs text-[#A7AAAD] leading-relaxed max-w-[240px]">
               The training ground and placement pipeline for high-performing virtual assistants, interns, and remote operators.
