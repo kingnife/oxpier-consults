@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import {
   ShieldCheck,
   ArrowUpRight,
@@ -244,10 +245,8 @@ export function TeamShowcase() {
     <div ref={containerRef} onMouseMove={handleMouseMove} className="w-full relative">
       {/* Floating Cursor Trailer with Lerp Smooth Tracking */}
       <div
-        className="pointer-events-none fixed z-50 overflow-hidden rounded-xl shadow-2xl border border-[#2A2D31] bg-[#16191C]/95 backdrop-blur-md hidden md:block"
+        className="pointer-events-none absolute top-0 left-0 z-50 overflow-hidden rounded-xl shadow-2xl border border-[#2A2D31] bg-[#16191C]/95 backdrop-blur-md hidden md:block"
         style={{
-          left: containerRef.current?.getBoundingClientRect().left ?? 0,
-          top: containerRef.current?.getBoundingClientRect().top ?? 0,
           transform: `translate3d(${smoothPosition.x + 28}px, ${smoothPosition.y - 120}px, 0)`,
           opacity: isVisible ? 1 : 0,
           scale: isVisible ? 1 : 0.85,
@@ -257,17 +256,23 @@ export function TeamShowcase() {
         <div className="relative w-[280px] overflow-hidden p-3.5">
           <div className="relative w-full h-[170px] rounded-lg overflow-hidden bg-[#0F1113] mb-3 border border-[#2A2D31]">
             {filteredOperators.map((operator, index) => (
-              <img
+              <div
                 key={operator.id}
-                src={operator.image}
-                alt={operator.name}
-                className="absolute inset-0 w-full h-full object-cover transition-all duration-400 ease-out"
+                className="absolute inset-0 w-full h-full transition-all duration-400 ease-out"
                 style={{
                   opacity: hoveredIndex === index ? 1 : 0,
                   transform: hoveredIndex === index ? "scale(1)" : "scale(1.1)",
                   filter: hoveredIndex === index ? "none" : "blur(8px)",
                 }}
-              />
+              >
+                <Image
+                  src={operator.image}
+                  alt={operator.name}
+                  fill
+                  sizes="280px"
+                  className="object-cover"
+                />
+              </div>
             ))}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0F1113] via-[#0F1113]/30 to-transparent" />
             {hoveredIndex !== null && filteredOperators[hoveredIndex] && (
@@ -476,12 +481,14 @@ export function TeamShowcase() {
           {/* Image + Metric preview */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
             <div className="h-28 rounded bg-[#16191C] border border-[#2A2D31] overflow-hidden relative">
-              <img
+              <Image
                 src={selectedOperator.image}
                 alt={selectedOperator.name}
-                className="w-full h-full object-cover object-center"
+                fill
+                sizes="(max-width: 640px) 100vw, 300px"
+                className="object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F1113] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F1113] via-transparent to-transparent pointer-events-none" />
             </div>
 
             <div className="bg-[#16191C] border border-[#2A2D31] rounded p-3.5 flex flex-col justify-center">

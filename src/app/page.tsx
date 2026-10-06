@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, ArrowUpRight, CheckCircle2, Shield, Flame, Terminal, Star, Clock, Users } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CheckCircle2, Star } from "lucide-react";
 import { TrainingModules } from "@/components/academy/training-modules";
 import { TalentLeaderboard } from "@/components/academy/leaderboard";
 import { VettingPipeline } from "@/components/academy/vetting-pipeline";

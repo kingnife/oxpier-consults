@@ -20,11 +20,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Oxpier Academy | Remote Operator Training & Talent Pipeline",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://oxpier.com"),
+  title: {
+    default: "Oxpier Academy | Remote Operator Training & Talent Pipeline",
+    template: "%s | Oxpier",
+  },
   description:
     "Rigorous training, live performance benchmarks, and direct remote placement for elite virtual assistants and operators.",
   keywords: [
     "Oxpier Academy",
+    "Oxpier Consults",
     "Remote Operator Training",
     "Executive Virtual Assistant",
     "Talent Leaderboard",
@@ -33,13 +38,19 @@ export const metadata: Metadata = {
     "Virtual Assistant Placement",
     "Operator Pipeline",
   ],
-  authors: [{ name: "Oxpier Academy" }],
+  authors: [{ name: "Oxpier" }],
+  creator: "Oxpier",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/assets/oxpier-logo-head.png",
+  },
   openGraph: {
     title: "Oxpier Academy | Remote Operator Training & Talent Pipeline",
     description:
       "Rigorous training, live performance benchmarks, and direct remote placement for elite virtual assistants and operators.",
     type: "website",
     locale: "en_US",
+    siteName: "Oxpier",
   },
   twitter: {
     card: "summary_large_image",
@@ -61,6 +72,17 @@ export const viewport: Viewport = {
   themeColor: "#0F1113",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Oxpier",
+  url: "https://oxpier.com",
+  logo: "https://oxpier.com/assets/oxpier-logo-transparent.png",
+  description:
+    "Remote operator training, live performance benchmarks, and direct placement pipeline for elite operators.",
+  sameAs: [],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
@@ -68,6 +90,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${playfair.variable} ${inter.variable} dark`}
       style={{ colorScheme: "dark" }}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen bg-[#0F1113] text-[#ECEDEF] font-sans antialiased selection:bg-[#3E5871]/30 selection:text-white">
         <Header />
         {children}

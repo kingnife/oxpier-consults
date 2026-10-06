@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CheckCircle2, Trophy, Award, Search, ArrowUpRight } from "lucide-react";
+import { CheckCircle2, Search, ArrowUpRight } from "lucide-react";
 
 interface Operator {
   rank: number;

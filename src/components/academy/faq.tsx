@@ -68,6 +68,9 @@ export function AcademyFAQ() {
                 <button
                   type="button"
                   onClick={() => toggle(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
+                  id={`faq-question-${index}`}
                   className="w-full py-5 px-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                 >
                   <span className="font-serif font-semibold text-base sm:text-lg text-white">
@@ -80,7 +83,12 @@ export function AcademyFAQ() {
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm text-[#ECEDEF]/80 font-sans leading-relaxed border-t border-[#2A2D31]/40">
+                  <div
+                    id={`faq-answer-${index}`}
+                    role="region"
+                    aria-labelledby={`faq-question-${index}`}
+                    className="px-6 pb-6 pt-1 text-sm text-[#ECEDEF]/80 font-sans leading-relaxed border-t border-[#2A2D31]/40"
+                  >
                     {faq.a}
                   </div>
                 )}

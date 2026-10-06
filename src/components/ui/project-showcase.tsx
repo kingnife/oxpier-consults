@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 interface Project {
@@ -68,10 +69,8 @@ export function ProjectShowcase() {
   return (
     <div ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-3xl mx-auto py-8">
       <div
-        className="pointer-events-none fixed z-50 overflow-hidden rounded-xl shadow-2xl border border-border/50"
+        className="pointer-events-none absolute top-0 left-0 z-50 overflow-hidden rounded-xl shadow-2xl border border-border/50"
         style={{
-          left: containerRef.current?.getBoundingClientRect().left ?? 0,
-          top: containerRef.current?.getBoundingClientRect().top ?? 0,
           transform: `translate3d(${smoothPosition.x + 20}px, ${smoothPosition.y - 100}px, 0)`,
           opacity: isVisible ? 1 : 0,
           scale: isVisible ? 1 : 0.8,
@@ -80,17 +79,23 @@ export function ProjectShowcase() {
       >
         <div className="relative w-[320px] h-[200px] bg-[#111111] rounded-xl overflow-hidden">
           {projects.map((project, index) => (
-            <img
+            <div
               key={project.title}
-              src={project.image}
-              alt={project.title}
-              className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-out"
+              className="absolute inset-0 w-full h-full transition-all duration-500 ease-out"
               style={{
                 opacity: hoveredIndex === index ? 1 : 0,
                 transform: hoveredIndex === index ? "scale(1)" : "scale(1.1)",
                 filter: hoveredIndex === index ? "none" : "blur(10px)",
               }}
-            />
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                sizes="320px"
+                className="object-cover"
+              />
+            </div>
           ))}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         </div>

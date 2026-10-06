@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, ShieldAlert, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export function ActionFunnel() {
   const [activeTab, setActiveTab] = useState<"client" | "candidate">("client");
@@ -31,9 +31,13 @@ export function ActionFunnel() {
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C6C9CC] to-transparent opacity-40" />
 
         {/* Dual Tab Switcher */}
-        <div className="flex border-b border-[#2A2D31] mb-8">
+        <div role="tablist" aria-label="Action Funnel Categories" className="flex border-b border-[#2A2D31] mb-8">
           <button
             type="button"
+            role="tab"
+            id="tab-client"
+            aria-selected={activeTab === "client"}
+            aria-controls="panel-client"
             onClick={() => {
               setActiveTab("client");
               setSubmitted(false);
@@ -51,6 +55,10 @@ export function ActionFunnel() {
           </button>
           <button
             type="button"
+            role="tab"
+            id="tab-candidate"
+            aria-selected={activeTab === "candidate"}
+            aria-controls="panel-candidate"
             onClick={() => {
               setActiveTab("candidate");
               setSubmitted(false);
@@ -91,7 +99,7 @@ export function ActionFunnel() {
           </div>
         ) : activeTab === "client" ? (
           /* Client Form */
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form id="panel-client" role="tabpanel" aria-labelledby="tab-client" onSubmit={handleSubmit} className="space-y-6">
             <div>
               <h3 className="font-serif text-2xl font-semibold text-white mb-1">
                 Request Operational Execution
@@ -200,7 +208,7 @@ export function ActionFunnel() {
           </form>
         ) : (
           /* Candidate Intake Form */
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form id="panel-candidate" role="tabpanel" aria-labelledby="tab-candidate" onSubmit={handleSubmit} className="space-y-6">
             <div>
               <h3 className="font-serif text-2xl font-semibold text-white mb-1">
                 Join The Operator Pipeline

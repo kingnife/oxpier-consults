@@ -75,7 +75,7 @@ export function VettingPipeline() {
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {STAGES.map((s, index) => {
+          {STAGES.map((s) => {
             const Icon = s.icon;
             return (
               <div

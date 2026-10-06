@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -41,13 +41,15 @@ export function Button({
   );
 }
 
-// Polymorphic link variant
+// Polymorphic Next.js link variant
 interface ButtonLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  href: string;
   variant?: "solid-steel" | "ghost" | "outline" | "metal";
   size?: "sm" | "md" | "lg";
 }
 
 export function ButtonLink({
+  href,
   variant = "solid-steel",
   size = "md",
   className,
@@ -75,8 +77,8 @@ export function ButtonLink({
   };
 
   return (
-    <a className={cn(base, variants[variant], sizes[size], className)} {...props}>
+    <Link href={href} className={cn(base, variants[variant], sizes[size], className)} {...props}>
       {children}
-    </a>
+    </Link>
   );
 }

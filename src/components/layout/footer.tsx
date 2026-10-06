@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Loader2, CheckCircle2 } from "lucide-react";
 
@@ -8,22 +10,22 @@ type FormState = "idle" | "loading" | "success" | "error";
 
 const FOOTER_LINKS = {
   "Academy Tracks": [
-    { label: "Executive Virtual Assistant", href: "#training" },
-    { label: "Pipeline and CRM Operations", href: "#training" },
-    { label: "Systems and SOP Architecture", href: "#training" },
-    { label: "Cohort 08 Application", href: "#apply" },
+    { label: "Executive Virtual Assistant", href: "/#training" },
+    { label: "Pipeline and CRM Operations", href: "/#training" },
+    { label: "Systems and SOP Architecture", href: "/#training" },
+    { label: "Cohort 08 Application", href: "/#apply" },
   ],
   "Talent Resources": [
-    { label: "Talent Leaderboard", href: "#leaderboard" },
-    { label: "Vetting Standards", href: "#standards" },
-    { label: "Graduation Benchmarks", href: "#training" },
-    { label: "Placement Model", href: "#standards" },
+    { label: "Talent Leaderboard", href: "/#leaderboard" },
+    { label: "Vetting Standards", href: "/#standards" },
+    { label: "Graduation Benchmarks", href: "/#training" },
+    { label: "Placement Model", href: "/#standards" },
   ],
   Admissions: [
-    { label: "Selection Process", href: "#standards" },
-    { label: "Candidate FAQ", href: "#apply" },
-    { label: "Compensation Floor", href: "#standards" },
-    { label: "Active Cohort Schedule", href: "#apply" },
+    { label: "Selection Process", href: "/#standards" },
+    { label: "Candidate FAQ", href: "/#apply" },
+    { label: "Compensation Floor", href: "/#standards" },
+    { label: "Active Cohort Schedule", href: "/#apply" },
   ],
 };
 
@@ -127,13 +129,15 @@ export function Footer() {
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
-            <a href="/" aria-label="Oxpier Home" className="flex items-center mb-4">
-              <img
+            <Link href="/" aria-label="Oxpier Home" className="flex items-center mb-4">
+              <Image
                 src="/assets/oxpier-logo-transparent.png"
                 alt="Oxpier Logo"
+                width={120}
+                height={36}
                 className="h-9 w-auto object-contain mix-blend-screen"
               />
-            </a>
+            </Link>
             <p className="text-xs text-[#A7AAAD] leading-relaxed max-w-[240px]">
               The training ground and placement pipeline for high-performing virtual assistants, interns, and remote operators.
             </p>
@@ -148,12 +152,12 @@ export function Footer() {
               <ul className="space-y-3">
                 {links.map(({ label, href }) => (
                   <li key={label}>
-                    <a
+                    <Link
                       href={href}
                       className="text-xs text-[#A7AAAD] hover:text-white transition-colors font-sans"
                     >
                       {label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -167,13 +171,13 @@ export function Footer() {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-[#A7AAAD]/60">
           <p>© {new Date().getFullYear()} Oxpier Academy. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <a href="#apply" className="hover:text-white transition-colors">
+            <Link href="/#apply" className="hover:text-white transition-colors">
               Admissions Policy
-            </a>
+            </Link>
             <span>•</span>
-            <a href="#standards" className="hover:text-white transition-colors">
+            <Link href="/#standards" className="hover:text-white transition-colors">
               Code of Conduct
-            </a>
+            </Link>
             <span>•</span>
             <span>Zero Tuition Guarantee</span>
           </div>
